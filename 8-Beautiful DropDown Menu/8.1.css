@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(101, 101, 134);
+}
+ul,
+li,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* h1.title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 100px;
+    font-size: 36px;
+    font-weight: bold;
+  } */
+header {
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+h1.title {
+  text-align: center;
+  color: coral;
+  border: 1px solid wheat;
+  padding: 10px 20px;
+  border-radius: 29px;
+  box-shadow: 0 1px 1px 0px white;
+}
+nav.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+}
+ul.myMenu {
+  width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+ul.myMenu li.item {
+  border-top: 1px solid orangered;
+}
+ul.myMenu li.item a {
+  color: whitesmoke;
+  padding: 15px 20px;
+  display: block;
+  background: tomato;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+ul.myMenu li.item .subMenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s ease-in-out;
+}
+ul.myMenu li.item .subMenu a {
+  color: rgb(212, 209, 209);
+  font-size: 16px;
+  display: block;
+  text-transform: capitalize;
+  border-bottom: 1px solid rgb(62, 62, 168);
+  background: rgb(38, 38, 105);
+  position: relative;
+  transition: hover 0.4s ease;
+}
+ul.myMenu li.item .subMenu a::before {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+ul.myMenu li.item .subMenu a:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-left: 11px solid rgb(101, 101, 134);
+  opacity: 1;
+}
+ul.myMenu li.item .subMenu a::after {
+  content: "";
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+ul.myMenu li.item .subMenu a:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 6px;
+  border-top: 24px solid transparent;
+  border-bottom: 24px solid transparent;
+  border-right: 11px solid rgb(101, 101, 134);
+  opacity: 1;
+}
+ul.myMenu li.item .subMenu a:hover {
+  background: rgb(4, 4, 85);
+  background: linear-gradient(
+    to bottom,
+    rgb(38, 38, 105) 0%,
+    rgb(38, 38, 105) 50%,
+    rgb(57, 57, 116) 51%,
+    rgb(41, 41, 134) 100%
+  );
+}
+.item:target .subMenu {
+  max-height: 300px !important;
+}
+#My-ID {
+  text-align: center;
+  margin: 20px 0;
+}
+#My-ID > a {
+  color: white;
+  padding: 6px 15px;
+  font-size: 28px;
+  text-decoration: none;
+  background: #2f4f4f6b;
+  border: 3px solid #b8b8b8;
+}
+#My-ID > a:hover {
+  background-color: #8fb0b06b;
+  color: rgb(61, 61, 61);
+}

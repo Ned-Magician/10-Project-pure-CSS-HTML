@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  background-color: #5b80aa;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+label {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+input#burger-menu:checked ~ label {
+  right: 0;
+}
+input#burger-menu {
+  display: none;
+}
+.bi-list,
+.bi-x {
+  stroke: white;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+.bi-x:hover,
+.bi-list:hover {
+  stroke: #ccc;
+  cursor: pointer;
+}
+svg.bi-x {
+  opacity: 0;
+}
+input#burger-menu:checked ~ label .bi-list {
+  opacity: 0;
+}
+input#burger-menu:checked ~ label .bi-x {
+  opacity: 1;
+}
+#menu {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: tomato;
+  transition: all 0.8s cubic-bezier(0.17, 0.88, 0.32, 1.25);
+  font-weight: bold;
+  opacity: 0;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  font-weight: bold;
+  height: 100vh;
+  color: white;
+  opacity: 1;
+}
+.main span span {
+  border-bottom: 1px solid whitesmoke;
+  padding-bottom: 8px;
+  border-width: thin;
+  text-align: center;
+}
+#menu a li {
+  margin-top: 50px;
+  transition: all 0.8s cubic-bezier(0.17, 0.88, 0.32, 1.25);
+}
+input#burger-menu:checked ~ #menu {
+  opacity: 1;
+  transition: all 0.8s cubic-bezier(0.17, 0.88, 0.32, 1.25);
+}
+input#burger-menu:checked ~ #main {
+  opacity: 0;
+}
+input#burger-menu:checked ~ #menu a li {
+  margin-top: 0px;
+  transition: all 0.8s cubic-bezier(0.17, 0.88, 0.32, 1.25);
+}

@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: rgb(248, 120, 188);
+  overflow: hidden;
+  /* height: 100%;
+    width: 100%; */
+}
+ul,
+li,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+/* p.title {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    color: rgb(219, 219, 219);
+    text-shadow: 0 4px 11px white;
+    padding: 5px;
+    margin: 20px 12px 0 0;
+    font-size: 36px;
+    font-weight: bold;
+  } */
+.container {
+  width: 100vw;
+  height: 100vh;
+  color: aliceblue;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+form {
+  display: flex;
+  text-align: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+form input {
+  height: 0;
+  margin: -12px 10px;
+  z-index: 12;
+}
+form input:checked {
+  bottom: 0;
+  outline: 0;
+}
+form input::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 11px;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: background-color 0.8s ease;
+}
+form input:checked::before {
+  background-color: white;
+}
+form input::after {
+  content: "" attr(title) "";
+  position: relative;
+  display: block;
+  top: -6px;
+  left: 30px;
+  min-width: 175px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.8s ease, margin-left 0.8s ease, top 0.8s ease;
+}
+form input:checked::after {
+  opacity: 1;
+  top: -2px;
+  left: 15px;
+}
+form input::after:not(label) {
+  opacity: 1;
+}
+form input:nth-of-type(1):checked ~ .labels label {
+  transform: translateY(-0%);
+}
+form input:nth-of-type(2):checked ~ .labels label {
+  transform: translateY(-100%);
+}
+form input:nth-of-type(3):checked ~ .labels label {
+  transform: translateY(-200%);
+}
+form input:nth-of-type(4):checked ~ .labels label {
+  transform: translateY(-300%);
+}
+form input:nth-of-type(5):checked ~ .labels label {
+  transform: translateY(-400%);
+}
+
+.labels {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  background-color: #2b2b2b;
+  transition: 0.75s cubic-bezier(0.75, 0.25, 0, 1);
+}
+label:nth-child(odd) {
+  background-color: tomato;
+}
+#My-ID {
+  text-align: center;
+  margin: 15px;
+}
+#My-ID > a {
+  color: white;
+  padding: 6px 9px;
+  font-size: 17px;
+  text-decoration: none;
+  background: #2f4f4f6b;
+  border: 3px solid #b8b8b8;
+}
+#My-ID > a:hover {
+  background-color: #8fb0b06b;
+  color: rgb(61, 61, 61);
+}
